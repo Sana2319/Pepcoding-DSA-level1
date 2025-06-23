@@ -177,15 +177,15 @@ public class Array {
 // Diff b/w of two arrays(a2-a1) (101)
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter n1: ");
-        int n1 = sc.nextInt();       
-        System.out.print("Enter n2: ");
-        int n2 = sc.nextInt();     
-        int[] arr1 = new int[n1];
-        int[] arr2 = new int[n2]; 
+        int n1 = sc.nextInt();         
+        int[] arr1 = new int[n1]; 
         System.out.println("Enter elements of arr1:");
         for(int i = 0; i < n1; i++) {
             arr1[i] = sc.nextInt();
         } 
+        System.out.print("Enter n2: ");
+        int n2 = sc.nextInt(); 
+        int[] arr2 = new int[n2];  
         System.out.println("Enter elements of arr2:");
         for(int i = 0; i < n2; i++) {
             arr2[i] = sc.nextInt();
@@ -207,7 +207,7 @@ public class Array {
                 dig = arr2_val + 10 - arr1_val;
                 carry = -1;
             }
-            diff[k] = dig;
+            diff[k] = dig;   //saving each digit of the final answer into the diff[] array from right to left
             i--;
             j--; 
             k--;
@@ -219,8 +219,8 @@ public class Array {
         }
         System.out.print("diff is: ");
         if (idx == diff.length) {
-            // all digits were zero
-            System.out.print("0");
+            //that mean all digits were zero
+            System.out.print("0");  //e.g. 100-100 = 0
         } 
         else {
             while (idx < diff.length) {
